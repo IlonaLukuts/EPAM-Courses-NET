@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MediaLibrary.MediaLibrary" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAABAAAJAAASQAAAAAAAAAAQAEAUAAAAoAAA=</HashCode>
+      <FileName>MediaLibrary.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MediaLibrary.MediaList" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQACAAQAAQAQAAAAAAAAAAAABAgAAA=</HashCode>
+      <FileName>MediaList.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MediaLibrary.Player" BaseTypeListCollapsed="true">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAgAAAQEgAAAgCAEIAAAAIAFBIAAAAAoAAAAAAAAAA=</HashCode>
+      <FileName>Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MediaLibrary.MediaFiles.AudioFile">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACIAAAAAIAAAABAJAAAEAAoEAACACAAAA=</HashCode>
+      <FileName>MediaFiles\AudioFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MediaLibrary.MediaFiles.MediaFile">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAoQAAAAAAAAAAAgAAAEAAAABAAADAAAA=</HashCode>
+      <FileName>MediaFiles\MediaFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MediaLibrary.MediaFiles.PictureFile">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAABAAAIAAAEAAAAEAAEAAAAEAAAAAAAACAAAA=</HashCode>
+      <FileName>MediaFiles\PictureFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MediaLibrary.MediaFiles.VideoFile">
+    <Position X="4" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAFAACIAAAEIAAAEABEBAAAEAAoAAAAICAAgA=</HashCode>
+      <FileName>MediaFiles\VideoFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="MediaLibrary.IMediaLibrary">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAABAAAJAAAAQAAAAAAAAAAQAEAEAAAAgAAA=</HashCode>
+      <FileName>IMediaLibrary.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MediaLibrary.IMediaList">
+    <Position X="11" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQACAAQAAQAQAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>IMediaList.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MediaLibrary.IPlayer">
+    <Position X="16.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IgAgAAAQEgAAAgAAEIAAAAIAEBAAAAAAoAAAAAAAAAA=</HashCode>
+      <FileName>IPlayer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MediaLibrary.MediaFiles.Interfaces.IAudioFile">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAACAAAAAAAAAAABABAAAAAAoAAAAAAAAAA=</HashCode>
+      <FileName>MediaFiles\Interfaces\IAudioFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MediaLibrary.MediaFiles.Interfaces.IMediaFile">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAEAAAAAAAACAAAA=</HashCode>
+      <FileName>MediaFiles\Interfaces\IMediaFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MediaLibrary.MediaFiles.Interfaces.IPictureFile">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAEAAAAEAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MediaFiles\Interfaces\IPictureFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MediaLibrary.MediaFiles.Interfaces.IVideoFile">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MediaFiles\Interfaces\IVideoFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

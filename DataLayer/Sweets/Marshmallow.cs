@@ -1,23 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets
 {
-    public enum MarshmallowType
-    {
-        RussianPaste,
-        FrenchMarshmallow,
-        AmericanMarshmallow
-    }
-    public class Marshmallow : Sweets
-    {
-        public MarshmallowType MarshmallowType { get; private set; }
-        public string Taste { get; private set; }
+    using System;
+    using DataLayer.Sweets.Enums;
 
-        public Marshmallow(int id, string name, string producer,
-            MarshmallowType marshmallowType, string taste) :
-            base(id, name, producer)
+    public class Marshmallow : Sweets, IEquatable<Marshmallow>
+    {
+        public Marshmallow(int id, string name, string producer, MarshmallowType marshmallowType, string taste)
+            : base(id, name, producer)
         {
             this.MarshmallowType = marshmallowType;
             this.Taste = taste;
@@ -26,9 +16,20 @@ namespace DataLayer.Sweets
             this.Price = 6.5M;
         }
 
+        public MarshmallowType MarshmallowType { get; private set; }
+
+        public string Taste { get; private set; }
+
         public override string ToString()
         {
-            return base.ToString() + " " + this.MarshmallowType.ToString() + " with taste of " + this.Taste;
+            return $"{base.ToString()} {this.MarshmallowType.ToString()} with taste of {this.Taste}";
+        }
+
+        public bool Equals(Marshmallow other)
+        {
+            return base.Equals(other) &&
+                this.MarshmallowType.Equals(other.MarshmallowType) &&
+                this.Taste.Equals(other.Taste);
         }
     }
 }

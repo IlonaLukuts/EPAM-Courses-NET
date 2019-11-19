@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets.Components
 {
-    public class Berries : SweetDecorator
-    {
-        public int BerryAmount { get; private set; }
-        public string BerryName { get; private set; }
-        public string BerryMadeOf { get; private set; }
+    using System;
 
+    public class Berries : SweetDecorator, IEquatable<Berries>
+    {
         public Berries(Sweets sweets, int berryAmount, string berryName, string berryMadeOf) : base(sweets)
         {
             this.BerryAmount = berryAmount;
@@ -20,9 +15,22 @@ namespace DataLayer.Sweets.Components
             this.Price = this.Sweets.Price + 0.1M;
         }
 
+        public int BerryAmount { get; private set; }
+
+        public string BerryName { get; private set; }
+
+        public string BerryMadeOf { get; private set; }
+
+        public bool Equals(Berries other)
+        {
+            return base.Equals(other) && this.BerryAmount.Equals(other.BerryAmount)
+                                      && this.BerryName.Equals(other.BerryName)
+                                      && this.BerryMadeOf.Equals(other.BerryMadeOf);
+        }
+
         public override string ToString()
         {
-            return base.ToString() + " with " + this.BerryAmount + " " + this.BerryMadeOf + " " + this.BerryName;
+            return $"{base.ToString()} with {this.BerryAmount} {this.BerryMadeOf} {this.BerryName}";
         }
     }
 }

@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="DataLayer.Sweets.Components.Berries">
+    <Position X="22.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAEAAAEgAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Sweets\Components\Berries.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Components.Filling">
+    <Position X="25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Sweets\Components\Filling.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Components.Glaze">
+    <Position X="30.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Components\Glaze.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Components.Nuts">
+    <Position X="32.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAEkAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Components\Nuts.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Components.Prediction">
+    <Position X="25.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Components\Prediction.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Components.SweetDecorator">
+    <Position X="27.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Components\SweetDecorator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Components.Topping">
+    <Position X="30.25" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Sweets\Components\Topping.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Cake">
+    <Position X="30" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Cake.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Candy">
+    <Position X="34.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Candy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.CandyBar">
+    <Position X="35.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\CandyBar.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Cookie">
+    <Position X="22.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEhAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Cookie.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Marmalade">
+    <Position X="23.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEgAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Marmalade.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Marshmallow">
+    <Position X="32.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAEgAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Marshmallow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.Sweets.Sweets">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAEgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Sweets\Sweets.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.GiftItem">
+    <Position X="27" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAEgAAAAAQAACAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GiftItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.NewYearGift">
+    <Position X="38.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAQAAAAgAAEAAAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>NewYearGift.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.Toy">
+    <Position X="24.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Toy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="DataLayer.IGiftItem">
+    <Position X="40.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAEAAAAAAQAACAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IGiftItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="DataLayer.Sweets.Components.Enums.ToppingShape">
+    <Position X="40.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAAAgCBAAEAAAAAAAAAACAAAAAEAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Sweets\Components\Enums\ToppingShape.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataLayer.Sweets.Enums.CakeType">
+    <Position X="38.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAIAAASAAAAAAAAAAAgYAAAAAQAAAACA=</HashCode>
+      <FileName>Sweets\Enums\CakeType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataLayer.Sweets.Enums.CandyType">
+    <Position X="38.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAAEAAAEAAAAAAAAAAAAAACAQAAAAAAAAAAAgAA=</HashCode>
+      <FileName>Sweets\Enums\CandyType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataLayer.Sweets.Enums.CookieType">
+    <Position X="36" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAIAAAAAAAAAAAAAAABEAAAAAQAAAACA=</HashCode>
+      <FileName>Sweets\Enums\CookieType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="DataLayer.Sweets.Enums.MarshmallowType">
+    <Position X="40.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>Sweets\Enums\MarshmallowType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

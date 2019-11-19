@@ -1,25 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets
 {
-    public enum CandyType
-    {
-        Lollipops,
-        Waffle,
-        Chocolate,
-        Toffee,
-        Pop,
-        Chewing,
-        Other
-    }
-    public class Candy : Sweets
-    {
-        public CandyType CandyType { get; private set; }
+    using System;
 
-        public Candy(int id, string name, string producer,
-            CandyType candyType) :
+    using DataLayer.Sweets.Enums;
+
+    public class Candy : Sweets, IEquatable<Candy>
+    {
+        public Candy(int id, string name, string producer, CandyType candyType) :
             base(id, name, producer)
         {
             this.CandyType = candyType;
@@ -28,9 +16,16 @@ namespace DataLayer.Sweets
             this.Price = 30.0M;
         }
 
+        public CandyType CandyType { get; private set; }
+
+        public bool Equals(Candy other)
+        {
+            return base.Equals(other) && this.CandyType.Equals(other.CandyType);
+        }
+
         public override string ToString()
         {
-            return base.ToString() + " " + this.CandyType.ToString() + " candy"; 
+            return $"{base.ToString()} {this.CandyType.ToString()} candy"; 
         }
     }
 }

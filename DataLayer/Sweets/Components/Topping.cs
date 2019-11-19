@@ -1,27 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets.Components
 {
-    public enum ToppingShape
-    {
-        Balls,
-        Hearts,
-        Stars,
-        Snowflakes,
-        Rectangles,
-        Butterflies,
-        Flowers,
-        Diamonds,
-        Fruits,
-        Different
-    }
+    using System;
 
-    public class Topping : SweetDecorator
+    using DataLayer.Sweets.Components.Enums;
+
+    public class Topping : SweetDecorator, IEquatable<Topping>
     {
-        public ToppingShape Shape { get; private set; }
-        public string ToppingColor { get; private set; }
         public Topping(Sweets sweets, ToppingShape toppingShape, string toppingColor) : base(sweets)
         {
             this.Shape = toppingShape;
@@ -31,9 +16,18 @@ namespace DataLayer.Sweets.Components
             this.Price = this.Sweets.Price + 0.02M;
         }
 
+        public ToppingShape Shape { get; private set; }
+        
+        public string ToppingColor { get; private set; }
+
+        public bool Equals(Topping other)
+        {
+            return base.Equals(other) && this.Shape.Equals(other.Shape) && this.ToppingColor.Equals(other.ToppingColor);
+        }
+
         public override string ToString()
         {
-            return base.ToString() + " " + this.ToppingColor + " " + this.Shape.ToString();
+            return $"{base.ToString()} {this.ToppingColor} {this.Shape.ToString()}";
         }
     }
 }

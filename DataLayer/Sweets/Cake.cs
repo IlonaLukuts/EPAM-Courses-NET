@@ -1,37 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets
 {
-    public enum CakeType
+    using System;
+
+    using DataLayer.Sweets.Enums;
+
+    public class Cake : Sweets, IEquatable<Cake>
     {
-        Biscuit,
-        Shortbread, //pesocznoe
-        Puff, //sloenoe
-        Brewing, //zavarnoe
-        Air,
-        Walnut, //orehovoe
-        Crumble, //kroshkovoe
-        Whipped, //sbityj
-        Almond //mindalnoe
-    }
-    public class Cake : Sweets
-    {
-        public CakeType CakeType { get; private set; }
-        public Cake(int id, string name, string producer,
-            CakeType cakeType) :
-            base(id, name, producer)
+        public Cake(int id, string name, string producer, CakeType cakeType)
+            : base(id, name, producer)
         {
             this.CakeType = cakeType;
             this.Sugar = 10.0;
-            this.Weight = 5.0;
-            this.Price = 30.0M;
+            this.Weight = 100.0;
+            this.Price = 100.0M;
+        }
+
+        public CakeType CakeType { get; private set; }
+
+        public bool Equals(Cake other)
+        {
+            return base.Equals(other) && this.CakeType.Equals(other.CakeType);
         }
 
         public override string ToString()
         {
-            return base.ToString() + " " + this.CakeType.ToString() + " cake";
+            return $"{base.ToString()} {this.CakeType.ToString()} cake";
         }
     }
 }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets.Components
 {
-    public class Prediction : SweetDecorator
+    using System;
+
+    public class Prediction : SweetDecorator, IEquatable<Prediction>
     {
-        public string PredictionText { get; private set; }
         public Prediction(Sweets sweets, string predictionText) : base(sweets)
         {
             this.PredictionText = predictionText;
@@ -15,9 +13,16 @@ namespace DataLayer.Sweets.Components
             this.Price = this.Sweets.Price + 0.5M;
         }
 
+        public string PredictionText { get; private set; }
+
+        public bool Equals(Prediction other)
+        {
+            return base.Equals(other) && this.PredictionText.Equals(other.PredictionText);
+        }
+
         public override string ToString()
         {
-            return base.ToString() + " with prediction: \"" + this.PredictionText + '\"';
+            return $"{base.ToString()} with prediction: \"{this.PredictionText}\"";
         }
     }
 }

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets.Components
 {
-    public class Filling : SweetDecorator
+    using System;
+
+    public class Filling : SweetDecorator, IEquatable<Filling>
     {
-        public string FillingName { get; private set; }
         public Filling(Sweets sweets, string fillingName) : base(sweets)
         {
             this.FillingName = fillingName;
@@ -15,9 +13,16 @@ namespace DataLayer.Sweets.Components
             this.Price = this.Sweets.Price + 0.5M;
         }
 
+        public string FillingName { get; private set; }
+
+        public bool Equals(Filling other)
+        {
+            return base.Equals(other) && this.FillingName.Equals(other.FillingName);
+        }
+
         public override string ToString()
         {
-            return base.ToString() + " with " + FillingName + " filling";
+            return $"{base.ToString()} with {this.FillingName} filling";
         }
     }
 }

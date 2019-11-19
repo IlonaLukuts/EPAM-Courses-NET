@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer
 {
+    using System.Collections.Generic;
+
     public class NewYearGift
     {
         private IList<IGiftItem> giftItems;

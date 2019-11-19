@@ -1,26 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets.Components
 {
-    public class SweetDecorator : Sweets
+    using System;
+
+    public abstract class SweetDecorator : Sweets, IEquatable<SweetDecorator>
     {
         protected Sweets Sweets;
-        
+
         protected SweetDecorator(Sweets sweets)
         {
             this.Sweets = sweets;
         }
 
-        public bool ExistsComponent(Type type)
+        public bool Equals(SweetDecorator other)
         {
-            return true;
+            return this.Sweets.Equals(other.Sweets);
         }
 
         public override string ToString()
         {
-            return Sweets.ToString();
+            return this.Sweets.ToString();
         }
     }
 }

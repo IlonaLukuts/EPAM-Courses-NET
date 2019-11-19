@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets.Components
 {
-    public class Nuts : SweetDecorator
+    using System;
+
+    public class Nuts : SweetDecorator, IEquatable<Nuts>
     {
-        public string NutsName { get; private set; }
-        public bool IsCrushed { get; private set; }
         public Nuts(Sweets sweets, string nutsName, bool isCrushed) : base(sweets)
         {
             this.NutsName = nutsName;
@@ -17,12 +14,24 @@ namespace DataLayer.Sweets.Components
             this.Price = this.Sweets.Price + 0.1M;
         }
 
+        public string NutsName { get; private set; }
+        
+        public bool IsCrushed { get; private set; }
+
+        public bool Equals(Nuts other)
+        {
+            return base.Equals(other) && this.NutsName.Equals(other.NutsName) && this.IsCrushed.Equals(other.IsCrushed);
+        }
+
         public override string ToString()
         {
-            string str = base.ToString() + " with ";
+            string str = $"{base.ToString()} with ";
             if (this.IsCrushed)
+            {
                 str += "crushed ";
-            return str + this.NutsName;
+            }
+
+            return $"{str} {this.NutsName}";
         }
     }
 }

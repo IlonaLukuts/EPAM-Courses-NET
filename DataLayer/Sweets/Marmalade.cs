@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿
 namespace DataLayer.Sweets
 {
-    public class Marmalade : Sweets
+    using System;
+
+    public class Marmalade : Sweets, IEquatable<Marmalade>
     {
-        public string Taste { get; private set; }
-        public Marmalade(int id, string name, string producer,
-            string taste) :
-            base(id, name, producer)
+        public Marmalade(int id, string name, string producer, string taste)
+            : base(id, name, producer)
         {
             this.Taste = taste;
             this.Sugar = 5.0;
@@ -17,9 +14,17 @@ namespace DataLayer.Sweets
             this.Price = 15.0M;
         }
 
+        public string Taste { get; private set; }
+
         public override string ToString()
         {
-            return base.ToString() + " " + this.Taste + " marmalade";
+            return $"{base.ToString()} {this.Taste} marmalade";
+        }
+
+        public bool Equals(Marmalade other)
+        {
+            return base.Equals(other) &&
+                this.Taste.Equals(other.Taste);
         }
     }
 }

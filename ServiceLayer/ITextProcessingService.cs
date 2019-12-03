@@ -7,6 +7,8 @@
 
     public interface ITextProcessingService
     {
+        IText GetText();
+
         bool ParseText(Stream stream);
 
         IEnumerable<ISentence> AllSentencesOrderedByWordsAmount();
@@ -16,5 +18,7 @@
         IText TextWithoutWordsStartWithConsonantLetters();
 
         void ReplaceWordInSentence(ISentence sentence, int wordLength, string stringForReplace);
+
+        ISentence FindSentence(int id);
     }
 }

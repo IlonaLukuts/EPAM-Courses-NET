@@ -48,7 +48,6 @@
         public override string ToString()
         {
             Type type = Type.GetType("PunctuationLeaf");
-            UnicodeCategory unicodeCategory;
             bool isPreviousWord = false;
             bool spaceBeforeSign;
             bool spaceAfterSign = false;
@@ -67,8 +66,9 @@
                 }
                 else
                 {
+                    bool previousSpaceAfterSign = spaceAfterSign;
                     ((PunctuationLeaf)sentenceItem).RequireSpaces(out spaceBeforeSign, out spaceAfterSign);
-                    if ((spaceBeforeSign && isPreviousWord) || (!isPreviousWord && spaceAfterSign))
+                    if ((spaceBeforeSign && isPreviousWord) || (!isPreviousWord && previousSpaceAfterSign))
                     {
                         stringBuilder.Append(' ');
                     }

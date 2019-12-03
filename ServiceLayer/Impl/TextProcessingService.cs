@@ -8,6 +8,7 @@
     using System.Text;
 
     using DataLayer;
+    using DataLayer.Impl;
 
     public class TextProcessingService : ITextProcessingService
     {
@@ -61,7 +62,7 @@
                 IEnumerable<ISentenceItem> words = GetWords(interrogativeSentence);
                 var wordsWithRequireLength = from sentenceItem in words
                                              where ((IWord)sentenceItem).LettersCollection.Count == length
-                                             select sentenceItem;
+                                             select (IWord)sentenceItem;
                 resultCollection.Add(wordsWithRequireLength.Distinct());
             }
 
@@ -100,6 +101,14 @@
             paragraph.AddSentence(newSentence);
         }
 
+        public ISentence FindSentence(int id)
+        {
+            return (from paragraph in this.text.ParagraphsCollection
+                    from sentence in paragraph.SentencesCollection
+                    where sentence.Id == id
+                    select sentence).FirstOrDefault();
+        }
+
         private bool IsFirstLetterConsonant(IWord word)
         {
             char firstLetter = (word.LettersCollection.ToList())[0].Letter;
@@ -109,7 +118,7 @@
         private bool IsSentenceInterrogative(ISentence sentence)
         {
             ISentenceItem punctuation = (from sentenceItem in sentence.SentenceItemsCollection
-                                          orderby sentenceItem.Id
+                                          orderby sentenceItem.SentencePosition
                                           select sentenceItem).Last();
             try
             {
@@ -129,7 +138,7 @@
 
         private IEnumerable<ISentenceItem> GetWords(ISentence sentence)
         {
-            Type type = Type.GetType("IWord");
+            Type type = typeof(DataLayer.Impl.WordComposite);
             return (from sentenceItem in sentence.SentenceItemsCollection
                     where sentenceItem.GetType() == type
                     select sentenceItem);

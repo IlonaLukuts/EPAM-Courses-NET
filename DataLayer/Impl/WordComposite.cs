@@ -54,6 +54,12 @@
                    && this.isThereLineBreak.Equals(other.isThereLineBreak);
         }
 
+        public bool Equals(IWord other)
+        {
+            return (from letter in this.LettersCollection select letter).All(other.LettersCollection.Contains)
+                   && this.LettersCollection.Count.Equals(other.LettersCollection.Count);
+        }
+
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();

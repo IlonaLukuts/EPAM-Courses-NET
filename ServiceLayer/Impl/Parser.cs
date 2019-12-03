@@ -8,6 +8,8 @@
     using DataLayer;
     using DataLayer.Impl;
 
+    using NLog;
+
     public class Parser : IParser, IDisposable
     {
         private static char[] endPunctuationChars = new[] { '.', '!', '?' };
@@ -26,6 +28,8 @@
 
         private char newLineChar = '\n';
 
+        private Logger logger = LogManager.GetCurrentClassLogger();
+
         public IText Parse(Stream stream)
         {
             return Parse(stream, 4096);
@@ -43,7 +47,7 @@
                     int lineIndex = 1;
                     int sentenceIndex = 1;
 
-                    char currentSymbol, previousSymbol;
+                    char currentSymbol, previousSymbol = ' ';
 
                     IParagraph paragraph = new ParagraphComposite()
                                                        {
@@ -76,36 +80,32 @@
                             }
                             else
                             {
-                                if (currentSymbol.Equals(newLineChar))
+                                if (currentSymbol == newLineChar)
                                 {
-                                    if (!(char.IsWhiteSpace(previousSymbol) || char.IsControl(previousSymbol)))
+                                    if (endPunctuationChars.Contains(previousSymbol)  || previousSymbol=='\r')
                                     {
-                                        if (endPunctuationChars.Contains(previousSymbol))
-                                        {
-                                            punctuation.StartLinePosition = lineIndex;
-                                            punctuation.SentencePosition = sentenceIndex;
-                                            sentence.AddSentenceItem(punctuation);
-                                            punctuation = new PunctuationLeaf() { Id = ++punctuationId };
-                                            paragraph.AddSentence(sentence);
-                                            sentence = new SentenceComposite()
-                                                           {
-                                                               Id = ++sentenceId, StartLinePosition = ++lineIndex
-                                                           };
-                                            sentenceIndex = 1;
+                                        punctuation.StartLinePosition = lineIndex;
+                                        punctuation.SentencePosition = sentenceIndex;
+                                        sentence.AddSentenceItem(punctuation);
+                                        punctuation = new PunctuationLeaf() { Id = ++punctuationId };
+                                        paragraph.AddSentence(sentence);
+                                        sentence = new SentenceComposite()
+                                                       {
+                                                           Id = ++sentenceId, StartLinePosition = ++lineIndex
+                                                       };
+                                        sentenceIndex = 1;
 
-                                            text.AddParagraph(paragraph);
-                                            paragraph = new ParagraphComposite()
-                                                            {
-                                                                Id = ++paragraphId, StartLinePosition = lineIndex
-                                                            };
-                                        }
-                                        else
-                                        {
-                                            paragraph.SetLineBreak();
-                                            sentence.SetLineBreak();
-                                        }
+                                        text.AddParagraph(paragraph);
+                                        paragraph = new ParagraphComposite()
+                                                        {
+                                                            Id = ++paragraphId, StartLinePosition = lineIndex
+                                                        };
                                     }
-
+                                    else
+                                    {
+                                        paragraph.SetLineBreak();
+                                        sentence.SetLineBreak();
+                                    }
                                 }
                                 else
                                 {
@@ -152,14 +152,15 @@
                                     }
                                     else
                                     {
-                                        if (char.GetUnicodeCategory(currentSymbol) == UnicodeCategory.DashPunctuation)
+                                        if (char.GetUnicodeCategory(currentSymbol) == UnicodeCategory.DashPunctuation
+                                            || currentSymbol == '\'' || currentSymbol == '’')
                                         {
                                             if (char.IsLetterOrDigit(previousSymbol))
                                             {
                                                 ILetter letter = new LetterLeaf(currentSymbol)
-                                                                        {
-                                                                            Id = letterId, StartLinePosition = lineIndex
-                                                                        };
+                                                                     {
+                                                                         Id = letterId, StartLinePosition = lineIndex
+                                                                     };
                                                 word.AddLetter(letter);
                                                 word.SetDash();
                                                 letterId++;
@@ -171,6 +172,15 @@
                                         }
                                         else
                                         {
+                                            if (char.IsLetterOrDigit(previousSymbol))
+                                            {
+                                                word.StartLinePosition = lineIndex;
+                                                word.SentencePosition = sentenceIndex;
+                                                sentence.AddSentenceItem(word);
+                                                word = new WordComposite() { Id = ++wordId };
+                                                sentenceIndex++;
+                                            }
+
                                             punctuation.AddSign(currentSymbol);
                                         }
                                     }
@@ -178,6 +188,11 @@
                             }
                         }
                     }
+                    punctuation.StartLinePosition = lineIndex;
+                    punctuation.SentencePosition = sentenceIndex;
+                    sentence.AddSentenceItem(punctuation);
+                    paragraph.AddSentence(sentence);
+                    text.AddParagraph(paragraph);
                 }
 
                 textId++;
@@ -185,10 +200,12 @@
             }
             catch (ArgumentNullException exception)
             {
+                this.logger.Error(exception.Message);
                 return null;
             }
             catch (ArgumentException exception)
             {
+                this.logger.Error(exception.Message);
                 return null;
             }
             finally
@@ -207,7 +224,7 @@
             for (int i = 0; i < newSentenceToParse.Length; i++)
             {
                 char currentSymbol = newSentenceToParse[i];
-                char previousSymbol;
+                char previousSymbol = ' ';
                 if (i - 1 > -1)
                     previousSymbol = newSentenceToParse[i - 1];
                 if (char.IsLetterOrDigit(currentSymbol))

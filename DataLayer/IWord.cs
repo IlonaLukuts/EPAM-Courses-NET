@@ -1,8 +1,9 @@
 ﻿namespace DataLayer
 {
+    using System;
     using System.Collections.Generic;
 
-    public interface IWord : ISentenceItem
+    public interface IWord : ISentenceItem, IEquatable<IWord>
     {
         bool HasDash { get; }
 

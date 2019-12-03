@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Grid.Column="0" Name="TextBox" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto"/>
+        <WrapPanel Grid.Column="1" Orientation="Vertical">
+            <Button Click="ButtonLoadText_OnClick" Margin="20">Load Text</Button>
+            <Button Click="ButtonSentenceOrder_OnClick" Margin="5">Sentences are ordered by amount of words</Button>
+            <Button Click="ButtonInterrogativeSentences_OnClick" Margin="5">Words In Interrogative Sentences</Button>
+            <TextBox Name="LengthInterrogativeTextBox">10</TextBox>
+            <Button Click="ButtonDeleteWordsOnLetter_OnClick" Margin="5">Delete words starting with consonant letter:</Button>
+            <Button Click="ButtonReplaceWordsInSentence_OnClick" Margin="5">Replace word in sentence(sentenceID,length,string):</Button>
+            <TextBox Name="SentenceIdTextBox">1</TextBox>
+            <TextBox Name="LengthTextBox">10</TextBox>
+            <TextBox Name="ReplaceStringTextBox">A</TextBox>
+        </WrapPanel>
     </Grid>
 </Window>

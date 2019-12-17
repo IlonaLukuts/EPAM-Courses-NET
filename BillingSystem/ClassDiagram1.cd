@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BillingSystem.Agreement">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <AssociationLine Name="Terminal" Type="BillingSystem.Terminal" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4" Y="2.549" />
+        <Point X="3.625" Y="2.549" />
+        <Point X="3.625" Y="4.028" />
+        <Point X="2" Y="4.028" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAABAAgAAgAAAAAAAAAAAAIgAAAACoAAAQ=</HashCode>
+      <FileName>Agreement.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Client" />
+      <Property Name="TelephoneNumber" />
+      <Property Name="Terminal" />
+      <Property Name="TelephoneCompany" />
+      <Property Name="TelephoneTariff" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BillingSystem.Client">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BillingSystem.Client.FullName" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Client.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAgAAAEBA=</HashCode>
+      <FileName>Client.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="agreements" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BillingSystem.Port">
+    <Position X="9" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Port.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Terminal" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BillingSystem.TelephoneCompany">
+    <Position X="9" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAAAEQAAAAAAAAAQAAAIAAAAAAAAAAAAAHBA=</HashCode>
+      <FileName>TelephoneCompany.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="telephoneTariffs" />
+      <Field Name="agreements" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BillingSystem.TelephoneNumber">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAEAiAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>TelephoneNumber.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Agreement" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BillingSystem.TelephoneTariff">
+    <Position X="6.25" Y="2.5" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BillingSystem.TelephoneTariff.Cost" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TelephoneTariff.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAACABAAAACAAAAAAAAAAAQAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>TelephoneTariff.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Company" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="BillingSystem.Terminal">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAACAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminal.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Agreement" />
+      <Property Name="Port" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
